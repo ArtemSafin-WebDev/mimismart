@@ -1,51 +1,38 @@
 import gsap from 'gsap';
+import { chunk } from 'lodash';
 
 export default function partnersSlider() {
     const elements = Array.from(document.querySelectorAll('.js-partners-slider'));
 
     elements.forEach(element => {
         const cards = Array.from(element.querySelectorAll('.setup__partners-card'));
-        const images = Array.from(element.querySelectorAll('.setup__partners-card-image')).map(image => image.src);
-        if (!cards.length) return;
-        let offset = 5;
 
-        if (cards.length < 5) {
-            offset = cards.length;
+        const AUTOPLAY_DURATION = 3000;
+
+        let cardsVisible = 5;
+
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            cardsVisible = 3;
+        }
+        if (window.matchMedia("(max-width: 640px)").matches) {
+            cardsVisible = 4;
         }
 
-        const swapCard = (card, delay = 0) => {
-            const img = card.querySelector('img');
-            gsap.to(card, {
-                autoAlpha: 0,
-                duration: 0.4,
-                ease: 'none',
-                delay,
-                onComplete: () => {
-                    setTimeout(() => {
-                        const currentSrc = img.src;
-                        const nextSrc = images.shift();
-                        images.push(currentSrc);
-                        img.src = nextSrc;
+        const cardChunks = chunk(cards, cardsVisible);
 
-                        gsap.to(card, {
-                            autoAlpha: 1,
-                            duration: 0.4,
-                            ease: 'none',
-                            onComplete: () => {
-                                swapCard(card, 2);
-                            }
-                        });
-                    }, 200);
-                }
-            });
-        };
+        console.log('Cards chunks', cardChunks);
 
-        cards.forEach((card, cardIndex) => {
-            if (cardIndex <= offset - 1) {
-                swapCard(card);
+        let index = 0;
+
+        setInterval(() => {
+            if (index > cardChunks.length - 1) {
+                index = 0;
             }
-        });
+            cards.forEach(card => card.classList.remove('visible'));
 
-        console.log('images', images);
+            cardChunks[index].forEach(card => card.classList.add('visible'));
+
+            index++;
+        }, AUTOPLAY_DURATION);
     });
 }
