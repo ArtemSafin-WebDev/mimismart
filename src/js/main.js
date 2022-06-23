@@ -20,6 +20,7 @@ import historySlider from './historySlider';
 import showroomSlider from './showroomSlider';
 import { IS_MOBILE } from './utils';
 import partnersSlider from './partnersSlider';
+import projectsSlider from './projectsSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     historySlider();
     showroomSlider();
     partnersSlider();
+    projectsSlider();
   
     const imgLoaded = imagesLoaded(document.querySelector('body'));
 

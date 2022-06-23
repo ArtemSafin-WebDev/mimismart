@@ -5,7 +5,7 @@
     flex-wrap: wrap;
 
     @include breakpoint(mobile) {
-        gap: 12px;
+        gap: 14px;
     }
 
     .swiper-pagination-bullet {
@@ -16,7 +16,7 @@
         background-color: rgba(#1D1E1E, .3);
         opacity: 1;
         border-radius: calc(var(--root-font-size) * .3);
-
+        margin: 0 !important;
         @include breakpoint(mobile) {
             width: 4px;
             height: 4px;

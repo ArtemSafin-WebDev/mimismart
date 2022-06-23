@@ -3,13 +3,16 @@
     color: white;
     padding-top: calc(var(--root-font-size) * 15);
     padding-top: calc(var(--root-font-size) * 23);
+    padding-bottom: calc(var(--root-font-size) * 54);
 
     @include breakpoint(small-tablet) {
         padding-top: 100px;
+        padding-bottom: 300px;
     }
 
     @include breakpoint(mobile) {
         padding-top: 127px;
+        padding-bottom: 300px;
     }
 }
 
