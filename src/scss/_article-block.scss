@@ -1,0 +1,189 @@
+.article-block {
+    margin-bottom: calc(var(--root-font-size) * 10);
+
+    @include breakpoint(small-tablet) {
+        margin-bottom: 150px;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 70px;
+    }
+}
+
+.article-block__items {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: calc(var(--root-font-size) * 15);
+
+    @include breakpoint(small-tablet) {
+        margin: 0 auto;
+        max-width: 582px;
+        grid-gap: 72px;
+    }
+
+    @include breakpoint(mobile) {
+        grid-gap: 50px;
+    }
+}
+
+.article-block__item-heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(var(--root-font-size) * 2.8);
+    line-height: 120%;
+    margin-bottom: calc(var(--root-font-size) * 3.3);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 120%;
+        margin-bottom: 30px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 140%;
+        margin-bottom: 24px;
+    }
+}
+
+.article-block__item-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: calc(var(--root-font-size) * 15);
+
+    @include breakpoint(small-tablet) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 32px;
+    }
+}
+
+.article-block__item-content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.8);
+    line-height: 150%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+
+        font-size: 14px;
+        line-height: 140%;
+    }
+
+    p {
+        margin-bottom: calc(var(--root-font-size) * 2);
+
+        @include breakpoint(small-tablet) {
+            margin-bottom: 32px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: calc(var(--root-font-size) * 5) 0;
+
+        @include breakpoint(small-tablet) {
+            margin: 32px 0;
+        }
+
+        @include breakpoint(mobile) {
+            position: relative;
+            left: 50%;
+            width: 100vw;
+            transform: translateX(-50%);
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    b {
+        font-weight: 600;
+    }
+
+    ul {
+        margin: calc(var(--root-font-size) * 2) 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: calc(var(--root-font-size) * 0.8);
+
+        @include breakpoint(small-tablet) {
+            margin: 32px 0;
+        }
+        & > li {
+            display: flex;
+            align-items: flex-start;
+            &::before {
+                content: '';
+                width: calc(var(--root-font-size) * 0.6);
+                height: calc(var(--root-font-size) * 0.6);
+                border-radius: 50%;
+                background: #00cfff;
+                margin-right: calc(var(--root-font-size) * 1.2);
+
+                margin-top: calc(var(--root-font-size) * 1.2);
+
+                @include breakpoint(small-tablet) {
+                    width: 4px;
+                    height: 4px;
+                    margin-top: 8px;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+.article-block__item-features {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    margin: calc(var(--root-font-size) * 5) 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.article-block__item-feature {
+    font-style: normal;
+    font-weight: 400;
+
+    padding: calc(var(--root-font-size) * 3.2) 0;
+    border-bottom: 1px solid rgba(#1d1e1e, 0.05);
+
+    @include breakpoint(small-tablet) {
+        padding: 24px 0;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 16px 0;
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+        border: none;
+    }
+}
