@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     validation();
     anchorLinks();
     accordions();
-    modals();
+    
     tabs();
     menu();
     handMove();
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     showroomSlider();
     partnersSlider();
     projectsSlider();
+    modals();
   
     const imgLoaded = imagesLoaded(document.querySelector('body'));
 

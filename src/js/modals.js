@@ -22,7 +22,7 @@ export default function modals() {
 
         const openHandler = () => {
             lockScroll(modal, {
-                reserveScrollBarGap: true,
+                reserveScrollBarGap: false,
             });
             modal.classList.add('active');
             document.body.classList.add('modal-open');
