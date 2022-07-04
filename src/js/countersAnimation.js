@@ -13,7 +13,7 @@ export default function countersAnimations() {
         scrollTrigger: {
             trigger: numbersBlock,
             start: 'top bottom',
-            markers: true
+            markers: false
         }
     });
 
