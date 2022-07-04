@@ -22,6 +22,7 @@ import { IS_MOBILE } from './utils';
 import partnersSlider from './partnersSlider';
 import projectsSlider from './projectsSlider';
 import countersAnimations from './countersAnimation';
+import featuresCards from './featuresCards';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     projectsSlider();
     modals();
     countersAnimations();
+    featuresCards();
   
     const imgLoaded = imagesLoaded(document.querySelector('body'));
 
