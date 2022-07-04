@@ -21,6 +21,7 @@ import showroomSlider from './showroomSlider';
 import { IS_MOBILE } from './utils';
 import partnersSlider from './partnersSlider';
 import projectsSlider from './projectsSlider';
+import countersAnimations from './countersAnimation';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     partnersSlider();
     projectsSlider();
     modals();
+    countersAnimations();
   
     const imgLoaded = imagesLoaded(document.querySelector('body'));
 
