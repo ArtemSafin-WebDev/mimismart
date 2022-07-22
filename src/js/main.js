@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
     masks();
     datepicker();
     validation();
-    anchorLinks();
+    // anchorLinks();
     accordions();
     
     tabs();
-    menu();
+    // menu();
     handMove();
     map();
     pricingSlider();
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     showroomSlider();
     partnersSlider();
     projectsSlider();
-    modals();
+    // modals();
     countersAnimations();
     featuresCards();
   
