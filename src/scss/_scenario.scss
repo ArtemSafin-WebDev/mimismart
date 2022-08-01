@@ -1,0 +1,261 @@
+.scenario {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+        linear-gradient(93.27deg, #00cfff 1.81%, #1363fd 95.24%, #0542b7 159.97%);
+    color: white;
+    padding: calc(var(--root-font-size) * 9) 0;
+    position: relative;
+    z-index: 15;
+
+    @include breakpoint(small-tablet) {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+            linear-gradient(93.27deg, #00cfff 1.81%, #1363fd 120.51%, #0542b7 159.97%);
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 4px 20px rgba(29, 29, 35, 0.24);
+        padding: 40px 0;
+    }
+
+    @include breakpoint(mobile) {
+        padding-top: 90px;
+        background: linear-gradient(118.27deg, #00cfff 12.16%, #1363fd 121%, #0542b7 157.18%), #d9d9d9;
+        box-shadow: none;
+    }
+}
+
+.scenario__image {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    width: calc(var(--root-font-size) * 36);
+    height: auto;
+    top: 50%;
+    right: calc(var(--root-font-size) * 6.4);
+    transform: translateY(-50%);
+
+    @include breakpoint(small-tablet) {
+        right: 34px;
+        width: 225px;
+    }
+
+    @include breakpoint(mobile) {
+        width: 289px;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+        height: auto;
+        right: auto;
+    }
+}
+.scenario__row {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: calc(var(--root-font-size) * 2);
+
+    @include breakpoint(small-tablet) {
+        grid-gap: 12px;
+        grid-row-gap: 28px;
+    }
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-row-gap: 24px;
+    }
+}
+
+.scenario__text-content {
+    grid-column: 1 / 5;
+
+    @include breakpoint(small-tablet) {
+        grid-column: 1 / 8;
+    }
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+    }
+}
+
+.scenario__heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(var(--root-font-size) * 3.9);
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    margin-bottom: calc(var(--root-font-size) * 3);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 120%;
+        margin-bottom: 24px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 140%;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+}
+
+.scenario__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 1.8);
+    line-height: 150%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: rgba(white, 0.9);
+        text-align: center;
+    }
+}
+
+.scenario__form {
+    grid-column: 6 / 10;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(small-tablet) {
+        grid-column: 1 / 8;
+    }
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+    }
+
+    .parsley-errors-list.filled {
+        color: #fc5b4a;
+    }
+}
+
+.scenario__form-fields {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: calc(var(--root-font-size) * 2.2);
+
+    @include breakpoint(small-tablet) {
+        grid-gap: 20px;
+    }
+
+    @include breakpoint(mobile) {
+        grid-gap: 16px;
+    }
+}
+
+.scenario__form-field {
+    position: relative;
+}
+
+.scenario__form-input {
+    display: block;
+    width: 100%;
+    height: calc(var(--root-font-size) * 5);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: calc(var(--root-font-size) * 0.3);
+    padding: 0 calc(var(--root-font-size) * 2.2);
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.6);
+    line-height: 140%;
+    color: #1d1e1e;
+    transition: background-color 0.2s, border-color 0.2s;
+    box-sizing: border-box;
+    @include breakpoint(small-tablet) {
+        height: 50px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 3px;
+        padding: 0 22px;
+    }
+
+    @include placeholder {
+        color: rgba(#1d1e1e, 0.7);
+    }
+}
+
+.scenario__form-label-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.6);
+    line-height: 140%;
+    margin-bottom: calc(var(--root-font-size) * 1.2);
+    display: block;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        margin-bottom: 8px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 130%;
+    }
+}
+
+.scenario__form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fc5b4a;
+    box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.1), 0px 4px 20px rgba(50, 50, 71, 0.08);
+    border-radius: calc(var(--root-font-size) * 3.5);
+    margin-top: 3rem;
+    padding: calc(var(--root-font-size) * 1.7) calc(var(--root-font-size) * 3.6);
+    color: white;
+    transition: color 0.2s, background-color 0.2s;
+    align-self: flex-start;
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 1.6);
+    line-height: 100%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        padding: 17px 30px;
+        margin-top: 20px;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        align-self: stretch;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        padding: 15px 26px;
+        margin-top: 16px;
+    }
+
+    &:hover {
+        background-color: #fb7061;
+    }
+
+    &:active {
+        background-color: #ee5646;
+    }
+}

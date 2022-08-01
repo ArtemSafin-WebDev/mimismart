@@ -1,17 +1,19 @@
 .functionality {
     background: #222327;
     color: white;
-    padding-top: calc(var(--root-font-size) * 44.2);
-    margin-top: calc(var(--root-font-size) * 25 * -1);
+    padding-top: calc(var(--root-font-size) * 20);
+
+    padding-bottom: calc(var(--root-font-size) * 27);
 
     @include breakpoint(small-tablet) {
-        padding-top: 230px;
-        margin-top: -85px;
+        padding-top: 150px;
+
+        padding-bottom: 177px;
     }
 
     @include breakpoint(mobile) {
-        padding-top: 155px;
-        margin-top: -54px;
+        padding-top: 100px;
+        padding-bottom: 112px;
     }
 }
 

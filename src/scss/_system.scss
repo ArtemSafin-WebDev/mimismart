@@ -1,0 +1,1065 @@
+.system {
+    background: #222327;
+    color: white;
+    padding-top: calc(var(--root-font-size) * 10);
+    margin-bottom: -1px;
+
+    @include breakpoint(small-tablet) {
+        padding-top: 100px;
+    }
+
+    @include breakpoint(mobile) {
+        padding-top: 40px;
+    }
+}
+
+.system__content {
+}
+
+.system__heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(var(--root-font-size) * 5.6);
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    margin-bottom: calc(var(--root-font-size) * 10);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 44px;
+        line-height: 120%;
+        margin-bottom: 40px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 24px;
+    }
+}
+
+.system__scrollable-content {
+    position: relative;
+
+    @include breakpoint(small-tablet) {
+        padding-left: 18px;
+    }
+
+    @include breakpoint(mobile) {
+        padding-left: 14px;
+    }
+}
+
+.system__scroll-progress {
+    position: absolute;
+    left: 0;
+    width: 1px;
+    background-color: rgba(#1f7ca3, 0.3);
+    border-radius: 6px;
+    z-index: 10;
+    height: 100%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #5eccfa;
+        opacity: 0.5;
+        border-radius: 6px;
+        height: calc(100% * var(--progress, 0));
+    }
+}
+
+.system__control {
+    @include breakpointMF(tablet) {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: calc(var(--root-font-size) * 2);
+    }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.system__control-text-content {
+    @include breakpointMF(tablet) {
+        grid-column: 1 / 5;
+        padding-left: calc(var(--root-font-size) * 5.2);
+    }
+
+    @include breakpoint(small-tablet) {
+        margin-bottom: 62px;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 67px;
+    }
+}
+
+.system__control-heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(var(--root-font-size) * 2.8);
+    line-height: 120%;
+    color: #5eccfa;
+    margin-bottom: calc(var(--root-font-size) * 2);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 120%;
+        margin-bottom: 20px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 140%;
+        margin-bottom: 12px;
+    }
+}
+
+.system__control-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.7);
+    line-height: 150%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        max-width: 500px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        max-width: none;
+    }
+}
+
+.system__control-diagram {
+    @include breakpointMF(tablet) {
+        grid-column: 6 / -1;
+        position: relative;
+        padding-top: calc(var(--root-font-size) * 10);
+        z-index: 1;
+
+        &::before {
+            content: '';
+            width: calc(var(--root-font-size) * 89);
+            height: calc(var(--root-font-size) * 79);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(44, 188, 249, 0.18) 27.94%, transparent 100%);
+            left: calc(var(--root-font-size) * 4 * -1);
+            top: calc(var(--root-font-size) * 23 * -1);
+            z-index: -1;
+            position: absolute;
+            pointer-events: none;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.system__control-diagram-image {
+    width: calc(var(--root-font-size) * 54);
+    height: auto;
+    display: block;
+
+    @include breakpoint(small-tablet) {
+        width: 410px;
+        margin-top: -210px;
+        margin-left: 80px;
+    }
+
+    @include breakpoint(mobile) {
+        width: 112px;
+        margin: 0 auto;
+        align-self: center;
+        margin-top: -20px;
+    }
+}
+
+.system__control-diagram-list {
+    @include breakpointMF(tablet) {
+        display: contents;
+    }
+
+    @include breakpoint(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-row-gap: 72px;
+    }
+
+    @include breakpoint(mobile) {
+        grid-gap: 12px;
+        grid-row-gap: 55px;
+    }
+}
+
+.system__control-diagram-list-item {
+    @include breakpointMF(tablet) {
+        position: absolute;
+        &:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+
+        &:nth-child(2) {
+            top: 0;
+            left: calc(var(--root-font-size) * 40);
+        }
+        &:nth-child(3) {
+            left: calc(var(--root-font-size) * 14);
+            top: calc(var(--root-font-size) * 19);
+        }
+        &:nth-child(4) {
+            left: calc(var(--root-font-size) * 50);
+            top: calc(var(--root-font-size) * 19);
+        }
+    }
+
+    @include breakpoint(small-tablet) {
+        padding-right: 90px;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.system__control-diagram-card {
+    background: #22bdfe;
+    border-radius: 6px;
+    color: white;
+    min-height: calc(var(--root-font-size) * 11);
+    padding: calc(var(--root-font-size) * 1.6);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc(var(--root-font-size) * 24);
+    box-sizing: border-box;
+    padding-right: calc(var(--root-font-size) * 7);
+
+    @include breakpoint(small-tablet) {
+        padding: 16px;
+        width: auto;
+        min-height: 110px;
+        padding-right: 70px;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 12px;
+        padding-bottom: 8px;
+        background: #22bdfe;
+        border: none;
+        min-height: 110px;
+        padding-top: 40px;
+    }
+}
+
+.system__control-diagram-card-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 1.7);
+    line-height: 130%;
+    min-height: calc(var(--root-font-size) * 4.5);
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var(--root-font-size) * 1);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 120%;
+        margin-bottom: 10px;
+        min-height: 46px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 120%;
+        margin-bottom: 10px;
+        min-height: 32px;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.system__control-diagram-card-type {
+    margin-top: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 0.8);
+    line-height: 140%;
+    letter-spacing: 0.07em;
+    padding: calc(var(--root-font-size) * 0.5) calc(var(--root-font-size) * 1.2);
+    padding-bottom: calc(var(--root-font-size) * 0.4);
+    border-radius: calc(var(--root-font-size) * 1.7);
+    background-color: rgba(white, 0.3);
+    align-self: flex-start;
+    text-align: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 8px;
+        line-height: 140%;
+        letter-spacing: 0.07em;
+        padding: 5px 12px;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 6px;
+        line-height: 140%;
+        letter-spacing: 0.07em;
+        text-align: center;
+        padding: 4px 10px;
+        border-radius: 17px;
+        box-sizing: border-box;
+    }
+}
+
+.system__control-diagram-card-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    width: calc(var(--root-font-size) * 16);
+    height: calc(var(--root-font-size) * 16);
+    transform: translateX(50%) translateY(-50%);
+    margin-top: calc(var(--root-font-size) * 3);
+    z-index: 5;
+
+    @include breakpoint(small-tablet) {
+        width: 160px;
+        height: 160px;
+        margin-top: 30px;
+    }
+
+    @include breakpoint(mobile) {
+        right: auto;
+        margin: 0;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%) translateY(-50%);
+        width: 95px;
+        height: 95px;
+    }
+}
+
+.system__control-diagram-card-icon-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.system__box {
+    @include breakpointMF(tablet) {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: calc(var(--root-font-size) * 2);
+        align-items: center;
+        margin-top: calc(var(--root-font-size) * 5 * -1);
+        position: relative;
+        z-index: 5;
+    }
+
+    @include breakpoint(small-tablet) {
+        position: relative;
+        margin-top: -30px;
+        z-index: 5;
+    }
+
+    @include breakpoint(mobile) {
+    }
+}
+
+.system__box-text-content {
+    @include breakpointMF(tablet) {
+        grid-column: 1 / 5;
+        padding-left: calc(var(--root-font-size) * 5.2);
+    }
+
+    @include breakpoint(small-tablet) {
+        margin-bottom: 40px;
+        position: absolute;
+        bottom: 100%;
+        let: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 24px;
+    }
+}
+
+.system__box-heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(var(--root-font-size) * 2.8);
+    line-height: 120%;
+
+    margin-bottom: calc(var(--root-font-size) * 2);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 120%;
+        margin-bottom: 20px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 140%;
+        margin-bottom: 12px;
+    }
+}
+
+.system__box-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.7);
+    line-height: 150%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        max-width: 500px;
+    }
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+
+.system__box-diagram {
+    position: relative;
+    @include breakpointMF(tablet) {
+        grid-column: 7 / -1;
+    }
+
+    @include breakpoint(mobile) {
+        width: 196px;
+        margin: 0 auto;
+    }
+}
+
+.system__box-diagram-image {
+    width: calc(var(--root-font-size) * 24);
+    height: auto;
+    display: block;
+
+    @include breakpoint(small-tablet) {
+        width: 240px;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.system__box-list {
+    display: contents;
+}
+
+.system__box-list-item {
+    position: absolute;
+    &:nth-child(1) {
+        top: calc(var(--root-font-size) * 3);
+        left: calc(var(--root-font-size) * 25);
+
+        @include breakpoint(small-tablet) {
+            top: 30px;
+            left: 250px;
+        }
+
+        @include breakpoint(mobile) {
+            left: -40px;
+            top: 212px;
+        }
+        .system__box-card {
+            &::after {
+                content: '';
+                position: absolute;
+                right: 100%;
+                margin-right: calc(var(--root-font-size) * 1 * -0.8);
+                top: calc(var(--root-font-size) * 6.7);
+                width: calc(var(--root-font-size) * 21.5);
+                height: calc(var(--root-font-size) * 2.7);
+                background-image: url('../img/box-connection-1-desktop.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 2;
+                pointer-events: none;
+
+                @include breakpoint(small-tablet) {
+                    margin-right: -8px;
+                    top: 67px;
+                    width: 215px;
+                    height: 27px;
+                }
+
+                @include breakpoint(mobile) {
+                    background-image: url('../img/box-connection-1-mobile.svg');
+                    width: 50px;
+                    height: 111px;
+                    top: auto;
+                    right: auto;
+                    margin: 0;
+                    bottom: 100%;
+                    left: 8px;
+                    margin-bottom: -3px;
+                }
+            }
+        }
+    }
+    &:nth-child(2) {
+        top: calc(var(--root-font-size) * 20.3);
+        left: calc(var(--root-font-size) * 31);
+
+        @include breakpoint(small-tablet) {
+            top: 203px;
+            left: 310px;
+        }
+
+        @include breakpoint(mobile) {
+            left: 40px;
+            top: 283px;
+            z-index: 3;
+        }
+        .system__box-card {
+            background: #5eccfa;
+            padding: calc(var(--root-font-size) * 1.6) calc(var(--root-font-size) * 3.2);
+            width: calc(var(--root-font-size) * 27);
+
+            @include breakpoint(small-tablet) {
+                padding: 16px 32px;
+                width: 270px;
+            }
+
+            @include breakpoint(mobile) {
+                width: 200px;
+                padding: 12px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 100%;
+                margin-right: calc(var(--root-font-size) * 1 * -1.1);
+                top: calc(var(--root-font-size) * 2.1);
+                width: calc(var(--root-font-size) * 17.6);
+                height: calc(var(--root-font-size) * 1.2);
+                background-image: url('../img/box-connection-2-desktop.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 2;
+                pointer-events: none;
+
+                @include breakpoint(small-tablet) {
+                    margin-right: -11px;
+                    top: 21px;
+                    width: 176px;
+                    height: 12px;
+                }
+
+                @include breakpoint(mobile) {
+                    background-image: url('../img/box-connection-2-mobile.svg');
+                    width: 108px;
+                    height: 102px;
+                    right: auto;
+                    top: auto;
+                    margin: 0;
+                    right: 4px;
+                    bottom: 100%;
+                    margin-bottom: -3px;
+                }
+            }
+        }
+    }
+}
+
+.system__box-card {
+    background: #22bdfe;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.1), 0px 4px 20px rgba(50, 50, 71, 0.1);
+    border-radius: 3px;
+    padding: calc(var(--root-font-size) * 3.2);
+    color: white;
+    width: calc(var(--root-font-size) * 30);
+    box-sizing: border-box;
+    position: relative;
+
+    @include breakpoint(small-tablet) {
+        padding: 32px;
+        width: 300px;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 12px;
+        width: 260px;
+    }
+}
+
+.system__box-card-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 1.7);
+    line-height: 130%;
+    margin-bottom: calc(var(--root-font-size) * 1.6);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 120%;
+        margin-bottom: 12px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        margin-bottom: 6px;
+    }
+}
+
+.system__box-card-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.4);
+    line-height: 140%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 140%;
+    }
+}
+
+.system__cable {
+    @include breakpointMF(tablet) {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: calc(var(--root-font-size) * 2);
+        margin-top: calc(var(--root-font-size) * 4 * -1);
+    }
+
+    @include breakpoint(small-tablet) {
+        display: flex;
+        align-items: center;
+        gap: 72px;
+        margin-top: -15px;
+    }
+
+    @include breakpoint(mobile) {
+        gap: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        margin: 0;
+        margin-top: 90px;
+    }
+}
+
+.system__cable-text-content {
+    @include breakpointMF(tablet) {
+        grid-column: 9 / 11;
+        grid-row: 1 / 2;
+        z-index: 2;
+        align-self: center;
+    }
+
+    @include breakpoint(small-tablet) {
+        width: 240px;
+    }
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        align-self: center;
+    }
+}
+
+.system__cable-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 1.8);
+    line-height: 150%;
+    margin-bottom: calc(var(--root-font-size) * 0.8);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 120%;
+        margin-bottom: 8px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 140%;
+        margin-bottom: 8px;
+    }
+}
+
+.system__cable-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1);
+    line-height: 150%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 150%;
+        color: rgba(white, 0.8);
+    }
+}
+
+.system__cable-diagram {
+    @include breakpointMF(tablet) {
+        grid-column: 6 / -1;
+        grid-row: 1 / 2;
+        position: relative;
+        left: calc(var(--root-font-size) * 6.7 * -1);
+    }
+
+    @include breakpoint(small-tablet) {
+        position: relative;
+        // margin-left: -18px;
+    }
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.system__cable-diagram-image {
+    width: calc(var(--root-font-size) * 37);
+    height: auto;
+    display: block;
+
+    @include breakpoint(small-tablet) {
+        width: 225px;
+    }
+
+    @include breakpoint(mobile) {
+        margin-left: auto;
+    }
+}
+
+.system__slider {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: calc(var(--root-font-size) * 2);
+    position: relative;
+    z-index: 1;
+    color: white;
+
+    @include breakpoint(small-tablet) {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 20px;
+        border-left: 1px solid #1d303a;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 24px 15px;
+        gap: 30px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(29, 48, 58, 0.25);
+        right: calc((100vw - 100%) / 2 * -1);
+        z-index: -1;
+        border-top: 1px solid #1d303a;
+        border-bottom: 1px solid #1d303a;
+    }
+}
+
+.system__slider-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--root-font-size) * 5.2);
+
+    border-left: 1px solid rgba(#5eccfa, 0.5);
+
+    @include breakpointMF(tablet) {
+        grid-column: span 5;
+    }
+
+    @include breakpoint(small-tablet) {
+        border: none;
+        padding: 0;
+    }
+}
+
+.system__slider-heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(var(--root-font-size) * 2.8);
+    line-height: 120%;
+    margin-bottom: calc(var(--root-font-size) * 2);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 120%;
+        margin-bottom: 20px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 140%;
+        margin-bottom: 12px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.system__slider-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--root-font-size) * 1.7);
+    line-height: 150%;
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+
+.system__slider-right-col {
+    @include breakpointMF(tablet) {
+        grid-column: span 7;
+        padding: calc(var(--root-font-size) * 5) 0;
+    }
+
+    @include breakpoint(small-tablet) {
+    }
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: calc(var(--root-font-size) * 24);
+        padding-right: calc(var(--root-font-size) * 2);
+        box-sizing: content-box;
+
+        @include breakpoint(small-tablet) {
+            width: 190px;
+            padding-right: 15px;
+        }
+
+        @include breakpoint(mobile) {
+            width: 256px;
+            padding-right: 8px;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+        // box-sizing: border-box;
+    }
+}
+
+.system__slider-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding-bottom: calc(var(--root-font-size) * 1.6);
+
+    background-color: #292f33;
+
+    transition: background-color 0.2s, border-color 0.2s;
+    // padding-top: calc(var(--root-font-size) * 4.2);
+
+    // transition: opacity .3s, visibility .3s;
+
+    // .swiper-slide-prev & {
+    //     opacity: 0;
+    //     visibility: hidden;
+    //     transition: opacity .3s, visibility 0s linear .3s;
+    // }
+
+    &:hover {
+        background: #22bdfe;
+        border-color: #22bdfe;
+    }
+}
+
+.system__slider-card-image-container {
+    position: relative;
+    margin-bottom: calc(var(--root-font-size) * 0.5);
+
+    @include breakpoint(small-tablet) {
+        margin-bottom: 5px;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 80%;
+    }
+}
+
+.system__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.system__slider-card-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 1.7);
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: calc(var(--root-font-size) * 2);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 130%;
+        margin-bottom: 15px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+    }
+}
+
+.system__slider-card-type {
+    align-self: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(var(--root-font-size) * 0.8);
+    line-height: 140%;
+    letter-spacing: 0.07em;
+    background-color: rgba(white, 0.3);
+    border-radius: calc(var(--root-font-size) * 1.7);
+    margin-top: auto;
+    padding: calc(var(--root-font-size) * 0.5) calc(var(--root-font-size) * 1.2);
+
+    @include breakpoint(small-tablet) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 7px;
+        line-height: 140%;
+        letter-spacing: 0.07em;
+        padding: 3px 10px;
+        border-radius: 13px;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 7px;
+        line-height: 140%;
+        letter-spacing: 0.07em;
+        padding: 3px 9px;
+    }
+}
+
+.system__slider-pagination {
+    margin-top: calc(var(--root-font-size) * 3.2);
+
+    @include breakpoint(small-tablet) {
+        margin-top: 24px;
+    }
+
+    @include breakpoint(mobile) {
+        margin-top: 24px;
+        justify-content: center;
+    }
+}

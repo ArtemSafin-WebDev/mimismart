@@ -23,6 +23,10 @@ import partnersSlider from './partnersSlider';
 import projectsSlider from './projectsSlider';
 import countersAnimations from './countersAnimation';
 import featuresCards from './featuresCards';
+import customSelects from './customSelects';
+import scenariosSlider from './scenariosSlider';
+import systemSlider from './systemSlider';
+import scrollProgress from './scrollProgress';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     validation();
     // anchorLinks();
     accordions();
-    
+    customSelects();
     tabs();
     // menu();
     handMove();
@@ -49,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
     modals();
     countersAnimations();
     featuresCards();
+    scenariosSlider();
+    systemSlider();
+    scrollProgress();
   
     const imgLoaded = imagesLoaded(document.querySelector('body'));
 

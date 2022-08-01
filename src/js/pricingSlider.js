@@ -1,7 +1,7 @@
-import { Swiper, Navigation, EffectFade, Pagination } from 'swiper';
+import { Swiper, Navigation, EffectFade, Pagination, Autoplay } from 'swiper';
 import { IS_MOBILE } from './utils';
 
-Swiper.use([Navigation, EffectFade, Pagination]);
+Swiper.use([Navigation, EffectFade, Pagination, Autoplay]);
 
 export default function pricingSlider() {
     const elements = Array.from(document.querySelectorAll('.js-pricing-slider'));
@@ -11,8 +11,8 @@ export default function pricingSlider() {
         const fractionPagination = element.querySelector('.pricing__slider-pagination');
 
         const setPagination = swiper => {
-            fractionPagination.innerHTML = `${String(swiper.activeIndex + 1)} / ${String(swiper.slides.length)}`
-        }
+            fractionPagination.innerHTML = `${String(swiper.activeIndex + 1)} / ${String(swiper.slides.length)}`;
+        };
 
         const instance = new Swiper(container, {
             effect: 'fade',
@@ -23,6 +23,9 @@ export default function pricingSlider() {
             navigation: {
                 nextEl: element.querySelector('.pricing__slider-controls-btn--next'),
                 prevEl: element.querySelector('.pricing__slider-controls-btn--prev')
+            },
+            autoplay: {
+                delay: 5000
             },
             autoHeight: IS_MOBILE ? true : false,
             pagination: {
@@ -36,7 +39,7 @@ export default function pricingSlider() {
                     setPagination(swiper);
                 },
                 slideChange: swiper => {
-                    setPagination(swiper)
+                    setPagination(swiper);
                 }
             }
         });
