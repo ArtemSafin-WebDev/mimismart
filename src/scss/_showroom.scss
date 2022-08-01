@@ -80,8 +80,22 @@
 }
 
 .showroom-block__col {
+    &:nth-child(2) {
+        margin-right: calc((100vw - 100% - var(--sb-width, 0) - var(--root-font-size) * 65) / 2 * -1);
+    }
+
+    @include breakpoint(small-tablet) {
+        &:nth-child(2) {
+            margin-right: calc((100vw - 200% - var(--sb-width, 0) - 12px) / 2 * -1);
+        }
+    }
+
     @include breakpoint(mobile) {
         display: contents;
+
+        &:nth-child(2) {
+            margin-right: 0;
+        }
     }
 }
 
@@ -176,6 +190,42 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
+    }
+}
+
+.showroom-block__slider-wrapper {
+    position: relative;
+}
+
+.showroom-block__slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(var(--root-font-size) * 4.4);
+    height: calc(var(--root-font-size) * 4.4);
+    transition: opacity 0.5s;
+    z-index: 20;
+
+    @include breakpoint(small-tablet) {
+        display: none;
+    }
+    &.swiper-button-disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+    &--prev {
+        left: calc(var(--root-font-size) * 2.4);
+    }
+
+    &--next {
+        right: calc(var(--root-font-size) * 2.4);
+    }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: white;
     }
 }
 
@@ -561,26 +611,24 @@ textarea.showroom-block__form-input {
     border: calc(var(--root-font-size) * 0.3) solid #dadada;
     border-radius: calc(var(--root-font-size) * 0.3);
     overflow: hidden;
+    height: calc(var(--root-font-size) * 43.4);
+    border-right: none;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
 
     @include breakpoint(small-tablet) {
         border: 2px solid #dadada;
+        border-right: none;
         border-radius: 3px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
         height: 402px;
-    }
-
-    @include breakpointMF(small-tablet) {
-        &::before {
-            content: '';
-            display: block;
-            padding-bottom: 40%;
-        }
     }
 
     @include breakpoint(mobile) {
         border: none;
         border-radius: 0;
         height: 458px;
-       
     }
 }
 
@@ -596,8 +644,8 @@ textarea.showroom-block__form-input {
 
 .showroom-block__contacts {
     position: absolute;
-    left: calc(var(--root-font-size) * 5);
-    right: calc(var(--root-font-size) * 5);
+    left: calc(var(--root-font-size) * 13);
+    right: calc(var(--root-font-size) * 13);
     top: 100%;
     transform: translateY(-50%);
     background: #ffffff;

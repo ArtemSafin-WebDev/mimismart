@@ -255,7 +255,7 @@
     }
 
     50% {
-        transform: translateY(-50%) scale(1);
+        transform: translateY(-50%) scale(1.1);
     }
 
     100% {
@@ -343,7 +343,7 @@
         height: calc(var(--root-font-size) * 11);
         fill: #22bdfe;
         animation-name: pulsate;
-        animation-duration: 4s;
+        animation-duration: 3s;
         animation-iteration-count: infinite;
         transition: fill 0.2s;
 

@@ -14,6 +14,10 @@ export default function showroomSlider() {
                 el: element.querySelector('.slider-pagination'),
                 type: 'bullets',
                 clickable: true
+            },
+            navigation: {
+                nextEl: element.querySelector('.showroom-block__slider-arrow--next'),
+                prevEl: element.querySelector('.showroom-block__slider-arrow--prev')
             }
         });
     });
