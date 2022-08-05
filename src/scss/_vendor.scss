@@ -6,7 +6,7 @@
 
 .swiper-slide {
     box-sizing: border-box;
-    height: auto;
+    height: auto !important;
     display: flex;
     flex-direction: column;
 }

@@ -27,6 +27,7 @@ import customSelects from './customSelects';
 import scenariosSlider from './scenariosSlider';
 import systemSlider from './systemSlider';
 import scrollProgress from './scrollProgress';
+import headersHighlight from './headersHighlight';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     scenariosSlider();
     systemSlider();
     scrollProgress();
+    headersHighlight();
   
     const imgLoaded = imagesLoaded(document.querySelector('body'));
 

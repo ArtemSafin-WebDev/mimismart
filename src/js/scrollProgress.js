@@ -14,7 +14,8 @@ export default function scrollProgress() {
                 start: 'top top',
                 end: 'bottom bottom',
                 scrub: true,
-                markers: false
+                markers: false,
+                endTrigger: '.system__slider'
             }
         });
 
