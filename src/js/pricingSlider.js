@@ -1,6 +1,6 @@
 import { Swiper, Navigation, EffectFade, Pagination, Autoplay } from 'swiper';
 import { IS_MOBILE } from './utils';
-
+import imagesLoaded from 'imagesloaded';
 Swiper.use([Navigation, EffectFade, Pagination, Autoplay]);
 
 export default function pricingSlider() {
@@ -9,7 +9,7 @@ export default function pricingSlider() {
     elements.forEach(element => {
         const container = element.querySelector('.swiper');
         const fractionPagination = element.querySelector('.pricing__slider-pagination');
-        const slides = Array.from(element.querySelectorAll('.swiper-slide'))
+        const slides = Array.from(element.querySelectorAll('.swiper-slide'));
 
         const setPagination = swiper => {
             fractionPagination.innerHTML = `${String(swiper.realIndex + 1)} / ${String(slides.length)}`;
@@ -57,5 +57,15 @@ export default function pricingSlider() {
         const instance = new Swiper(container, options);
 
         instance.init();
+
+        const imgLoaded = imagesLoaded(document.querySelector('body'));
+
+        imgLoaded.on('always', () => {
+            instance.update()
+        });
+
+        document.addEventListener('lazyloaded', () => {
+            instance.update()
+        });
     });
 }
