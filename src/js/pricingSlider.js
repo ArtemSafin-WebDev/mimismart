@@ -9,23 +9,22 @@ export default function pricingSlider() {
     elements.forEach(element => {
         const container = element.querySelector('.swiper');
         const fractionPagination = element.querySelector('.pricing__slider-pagination');
+        const slides = Array.from(element.querySelectorAll('.swiper-slide'))
 
         const setPagination = swiper => {
-            fractionPagination.innerHTML = `${String(swiper.activeIndex + 1)} / ${String(swiper.slides.length)}`;
+            fractionPagination.innerHTML = `${String(swiper.realIndex + 1)} / ${String(slides.length)}`;
         };
 
-        const instance = new Swiper(container, {
+        let options = {
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
             },
+            loop: true,
             speed: 500,
             navigation: {
                 nextEl: element.querySelector('.pricing__slider-controls-btn--next'),
                 prevEl: element.querySelector('.pricing__slider-controls-btn--prev')
-            },
-            autoplay: {
-                delay: 5000
             },
             autoHeight: IS_MOBILE ? true : false,
             pagination: {
@@ -42,7 +41,20 @@ export default function pricingSlider() {
                     setPagination(swiper);
                 }
             }
-        });
+        };
+
+        if (!window.matchMedia('(max-width: 640px)').matches) {
+            options = {
+                ...options,
+                autoplay: {
+                    delay: 5000,
+                    pauseOnMouseEnter: true,
+                    disableOnInteraction: false
+                }
+            };
+        }
+
+        const instance = new Swiper(container, options);
 
         instance.init();
     });
